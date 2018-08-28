@@ -2,11 +2,11 @@
   "db": {
     "host": "localhost",
     "port": 27017,
-    "url":  "",
+    "url": "",
     "database": "book-app",
     "password": "",
     "name": "db",
     "user": "me",
-    "connector": "mongodb"  
+    "connector": "mongodb"
   }
 }

@@ -1,0 +1,113 @@
+{
+  "name": "Book",
+  "plural": "Books",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "cover_page": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "rent_value": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "edition": {
+      "type": "string"
+    },
+    "genres": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string",
+      "required": true
+    },
+    "isbn_code": {
+      "type": "string",
+      "required": true
+    },
+    "no_of_pages": {
+      "type": "string",
+      "required": true
+    },
+    "publish_date": {
+      "type": "date"
+    },
+    "publisher": {
+      "type": "string",
+      "required": true
+    },
+    "samplePage_url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "created_on": {
+      "type": "date"
+    },
+    "modified_on": {
+      "type": "date"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "modified_by": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "hasOne",
+      "model": "User",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
