@@ -19,8 +19,8 @@
       "type": "string",
       "required": true
     },
-    "rent_value": {
-      "type": "string",
+    "rent": {
+      "type": "object",
       "required": true
     },
     "description": {
